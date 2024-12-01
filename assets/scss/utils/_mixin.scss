@@ -1,0 +1,25 @@
+@mixin ellipse($line:1){
+    @if($line>1){
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: $line;
+    }
+    @else{
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+}
+
+
+@mixin mobile(){
+    @media (max-width:768px) {
+        @content;
+    }
+}
+
+@mixin tablet(){
+    @media (max-width:1024px) {
+        @content;
+    }
+}
