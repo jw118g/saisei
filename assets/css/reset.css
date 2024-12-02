@@ -1,0 +1,68 @@
+:root {
+    --padding-horizontal--main: 3rem;
+    --size--2rem: 2rem;
+    --size--2-5rem: 2.5rem;
+    --size--3rem: 3rem;
+    --size--3-5rem: 3.5rem;
+    --size--4rem: 4rem;
+    --size--4-5rem: 4.5rem;
+    --size--5rem: 5rem;
+    --size--5-5rem: 5.5rem;
+    --size--6rem: 6rem;
+    --size--6-5rem: 6.5rem;
+    --size--7rem: 7rem;
+    --size--7-5rem: 7.5rem;
+    --size--8rem: 8rem;
+    --size--8-5rem: 8.5rem;
+    --size--9rem: 9rem;
+    --size--9-5rem: 9.5rem;
+    --size--10rem: 10rem;
+    --size--11rem: 11rem;
+    --size--12rem: 12rem;
+    --size--13rem: 13rem;
+    --size--14rem: 14rem;
+    --size--15rem: 15rem;
+    --size--16rem: 16rem;
+    --size--20rem: 20rem;
+    --size--24rem: 24rem;
+    --size--28rem: 28rem;
+    --size--32rem: 32rem;
+    --display--font-size: 16rem;
+    --h1--font-size: 10.96rem;
+    --h2--font-size: 5.14rem;
+    --h3--font-size: 3.52rem;
+    --h4--font-size: 2.41rem;
+    --h5--font-size: 1.65rem;
+    --h6--font-size: 1.13rem;
+    --text-xlarge--font-size: 4rem;
+    --variable-name: 2.3rem;
+    --text-large--font-size: 1.74rem;
+    --text-main--font-size: 1.32rem;
+    --text-small--font-size: 1rem;
+    --text-xsmall--font-size: 0.76rem;
+}
+
+/* 초기화 */
+*{margin:0;padding:0;font:inherit;color:inherit;}
+*, :after, :before {box-sizing:border-box;}
+html, body {height:100%;}
+img, picture, video, canvas, svg {display: block;max-width:100%;}
+button {background:none;border:0;cursor:pointer;}
+a {text-decoration:none}
+table {border-collapse:collapse;border-spacing:0}
+ul{list-style: none;}
+fieldset,input {border: 0;}
+
+/* 폰트 */
+@font-face {
+    font-family: "saisei-font";
+    font-style: normal;
+    font-weight: 100;
+    src: url("/assets/font/font.woff2") format("woff2");
+}
+
+/* 세팅 */
+html {}
+body {
+    font-family: saisei-font ,sans-serif;
+}
