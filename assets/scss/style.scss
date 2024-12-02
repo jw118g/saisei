@@ -1,0 +1,13 @@
+@import './utils/var'; //변수
+@import './utils/mixin'; //재활용
+
+@import './base/reset';
+@import './base/font';
+@import './base/preset';
+
+@import './component/btn';
+
+@import './layout/header';
+@import './layout/footer';
+
+@import './pages/main';
