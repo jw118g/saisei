@@ -100,11 +100,11 @@ main#container {
         z-index: 3;
 
         .svg-wrap {
-            width: 70%;
-
             @include tablet {
                 width: 100%;
             }
+
+            width: 70%;
             
         }
 
@@ -121,6 +121,7 @@ main#container {
                 gap: 40px;
             }
 
+            opacity: 0;
             color: #fbf0da;
             width: 20%;
             height: 100%;

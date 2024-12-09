@@ -11,33 +11,6 @@ $('.menu-area .close-btn').click(function(){
     $("main#container").css('--opacity', '0')
 })
 
-// const textSplit = new SplitType(`[data-split="line"]`, {type: 'lines'});
-// $('.line').wrap('<div class="line-wrap">')
-
-// let textSplit;
-
-// function initializeSplitType() {
-//     // 이전 SplitType 인스턴스가 있다면 제거
-//     if (textSplit) {
-//         textSplit.revert(); // SplitType 인스턴스 초기화
-//     }
-
-//     // 새로운 SplitType 인스턴스 생성
-//     textSplit = new SplitType(`[data-split="line"]`, {type: 'lines'});
-    
-//     // 기존의 line을 감싸는 작업
-//     $('.line').wrap('<div class="line-wrap">');
-// }
-
-// // 처음 로드 시 SplitType 초기화
-// initializeSplitType();
-
-// // 윈도우 사이즈가 변경될 때마다 SplitType 초기화
-// $(window).resize(function() {
-//     initializeSplitType();
-// });
-
-
 
 
 /* textSplit 효과 */
@@ -86,43 +59,43 @@ function applyGSAPAnimation() {
 
 function applyGSAPAnimationIntro() {
 
-// path에 대해 애니메이션
-const paths = document.querySelectorAll(".group-home .svg-wrap svg path");
+    // path에 대해 애니메이션
+    const paths = document.querySelectorAll(".group-home .svg-wrap svg path");
 
-paths.forEach((path) => {
-    const pathLength = path.getTotalLength();
-    
-    gsap.set(path, { 
-        strokeDasharray: pathLength, 
-        strokeDashoffset: pathLength,
-        stroke: "rgb(251, 240, 218)",
-    });
+    paths.forEach((path) => {
+        const pathLength = path.getTotalLength();
+        
+        gsap.set(path, { 
+            strokeDasharray: pathLength, 
+            strokeDashoffset: pathLength,
+            stroke: "rgb(251, 240, 218)",
+        });
 
-    const introTl = gsap.timeline({
-        defaults: {
-            ease: "power1.out",
-        },
-        delay: 0.5
-    });
-    
-    introTl
-    .to(path,{
-        strokeDashoffset: 0,
-        duration: 4,
-    })
-    .to(path,{
-        fill: "rgb(251, 240, 218)",
-        duration: 3,
-    },"<+=0.5")
-    .to('#header',{
-        "--scale" : 1,
-    },"<+=1")
-    .to('.est',{
-        yPercent : -100,
-    },"<+=1") 
-    .to('.menu-btn .bar',{
-        "clip-path": "inset(0% 0% 0% 0%)"
-    },"<+=0.5") 
+        const introTl = gsap.timeline({
+            defaults: {
+                ease: "power1.out",
+            },
+            delay: 0.5
+        });
+        
+        introTl
+        .to(path,{
+            strokeDashoffset: 0,
+            duration: 4,
+        })
+        .to(path,{
+            fill: "rgb(251, 240, 218)",
+            duration: 3,
+        },"<+=0.5")
+        .to('#header',{
+            "--scale" : 1,
+        },"<+=1")
+        .to('.est',{
+            yPercent : -100,
+        },"<+=1") 
+        .to('.menu-btn .bar',{
+            "clip-path": "inset(0% 0% 0% 0%)"
+        },"<+=0.5") 
 
 });
     //텍스트효과
@@ -133,13 +106,17 @@ paths.forEach((path) => {
         const textTl = gsap.timeline();
         textTl.to($(el).find('.line-wrap .line'), {
             yPercent: -100,
+            opacity : 1,
             duration: 0.7,
             ease: "power2.out",
             stagger: 0.15,
             delay: 2,
         })
+        .to($('.group-home .text-area'),{
+            opacity:1,
+        },"<")
         .from($('.group-home .desc svg'),{
-            opacity:0
+            opacity:0,
         },"<")
         
     })
@@ -277,22 +254,6 @@ $('.menu-area .close-btn').click(function() {
 
 
 
-// landingTl = gsap.timeline({
-//     onComplete:function(){
-//         // alert();
-//         $('.landing').remove();
-//     }
-// })
-
-// landingTl.to('.landing .line1',{
-//     scaleY:0
-// })
-// landingTl.to('.landing svg circle',{
-//     'stroke-dashoffset': '470.48px'
-// })
-// landingTl.to('.landing svg path',{
-//     autoAlpha:0
-// })
 
 
 /* 헤더 */
@@ -333,56 +294,6 @@ $(`[data-header="dark"]`).each(function(i,el){
 })
 
 
-
-/* 전체 텍스트 효과  */
-
-//const textSplit = new SplitType(`[data-split="line"]`, {type: 'lines'});
-
-
-
-
-// $(document).ready(function() {
-//     gsap.registerPlugin(ScrollTrigger);
-
-//     $(`[data-trigger="text-line"]`).each(function () {
-//         const el = this;
-
-//         textTl = gsap.timeline({
-//             scrollTrigger: {
-//                 trigger: el,
-//                 start: "0% 30%",
-//                 once: true // 한 번 실행 후 더 이상 실행하지 않음
-//             }
-//         })
-//         textTl.to($(el).find('.line-wrap .line'), { //line에 each문 사용하는것 x
-//             yPercent: -100,
-//             duration: 0.7,
-//             ease: "power2.out",
-//             stagger: 0.15
-//         });
-//     });
-// });
-
-
-
-// $(`[data-trigger="text-line"]`).each(function (i,el) {
-//     const textLineTl = gsap.timeline({
-//         scrollTrigger: {
-//             trigger: el, // jQuery 객체에서 DOM 요소로 변환
-//             start: "0% 0%",
-//             scrub: 0,
-//             // markers: true,
-//         },
-//     });
-
-//     $('.line-wrap .line').each(function(i,text) {
-//         textLineTl.to(text, {
-//             yPercent: -100,
-//             duration: 1,
-//             stagger: 0.1
-//         });
-//     });
-// });
 
 
 /* 이미지 배경 updown */

@@ -1029,6 +1029,7 @@ main#container::before {
   }
 }
 .sc-intro .group-home .content .text-area {
+  opacity: 0;
   color: #fbf0da;
   width: 20%;
   height: 100%;
